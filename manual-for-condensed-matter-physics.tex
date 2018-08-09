@@ -1,0 +1,208 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{book} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage[top=2.5cm, bottom=2.5cm, outer=2.5cm, inner=4cm]{geometry} % to change the page dimensions
+\geometry{letterpaper} % or letterpaper (US) or a5paper or....
+%\geometry{margin=2.5cm} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+%\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+%\lhead{}\chead{}\rhead{}
+%\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\sffamily\mdseries\upshape} % (See the fntguide.pdf for font help)
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+%%% ADDED BY WENJIE CHEN
+\usepackage{wrapfig}
+\usepackage{subfigure}
+%\usepackage{xcolor}
+\usepackage[svgnames]{xcolor}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{extarrows}
+\usepackage{hyperref}
+\newcommand{\angstrom}{\textup{\AA}}
+
+%%% END Article customizations
+
+%%% The "real" document content comes below...
+
+%\title{\textbf{Manual of Condensed Matter Physics}}
+%\author{Wenjie Chen}
+%\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+%\maketitle
+
+\begin{titlepage} % Suppresses headers and footers on the title page
+
+	\raggedleft % Right align everything
+	
+	\vspace*{\baselineskip} % Whitespace at the top of the page
+	
+	%------------------------------------------------
+	%	Author
+	%------------------------------------------------
+	
+	{\Large Wenjie Chen} % Author name
+	
+	\vspace*{0.167\textheight} % Whitespace before the title
+	
+	%------------------------------------------------
+	%	Title and subtitle
+	%------------------------------------------------
+	
+	\textbf{\LARGE A Manual for}\\[\baselineskip] % First title line
+	
+	\textbf{\textcolor{Blue}{\Huge Condensed Matter Physics}}\\[\baselineskip] % Main title line which draws the focus of the reader
+	
+	{\Large \textit{for beginners}} % Subtitle
+	
+	\vfill % Whitespace between the titles and the publisher
+	
+	%------------------------------------------------
+	%	Publisher
+	%------------------------------------------------
+	
+	{\large International Center for Quantum Materials\\Peking University} % Publisher and logo
+	
+	\vspace*{2\baselineskip} % Whitespace at the bottom of the page
+
+\end{titlepage}
+
+\tableofcontents
+
+\chapter{Magnetism}
+
+\begin{center}
+\fbox{
+\begin{minipage}[c]{0.8\textwidth}
+\vspace{0.5cm}
+\begin{center}
+Science is rooted in conversations.
+\end{center}
+\begin{flushright}
+------ Werner Heisenberg (1901 - 1976)
+\end{flushright}
+\vspace{0cm}
+\end{minipage}
+}
+\end{center}
+
+\section{Magnetic Properties}
+\subsection{Magnetic susceptibility}
+\subsubsection{Definition}
+\textbf{Magnetic susceptibility} (denoted $\chi$) is a dimensionless proportionality constant that indicates the degree of magnetization of a material in response to an applied magnetic field. It indicates whether a material is attracted into or repelled out of a magnetic field. Quantitative measures of the magnetic susceptibility also provide insights into the structure of materials, providing insight into bonding and energy levels.\footnote{See wikipedia page: \href{https://en.wikipedia.org/wiki/Magnetic_susceptibility}{Magnetic susceptibility}.}
+
+The definition of magnetic susceptibility (volume susceptibility) is as followed
+\begin{equation}
+\mathbf{M} = \chi \mathbf{H}
+\end{equation}
+where $\mathbf{M}$ is the magnetization of the material (the magnetic dipole moment per unit volume), and $\mathbf{H}$ is the magnetic field strength.
+
+A material can be \textbf{paramagnetic} ($\chi > 0$) or \textbf{diamagnetic} ($\chi < 0 $) depending on whether the magnetic field in it is strengthened or weakened by the induced magnetization.
+
+While volume susceptibility is a dimensionless constant, mass susceptibility and molar susceptibility are \textbf{not}. They are defined as
+\begin{equation}
+\chi_{\rm mass} = \frac{\chi}{\rho}
+\end{equation}
+and
+\begin{equation}
+\chi_{\rm mol} = M \chi_{\rm mass} = \frac{M\chi}{\rho}
+\end{equation}
+where $\rho$ is the density in $\rm kg/m^3$ and $M$ is molar mass in $\rm kg/mol$.
+
+\subsubsection{Different Unit Systems}
+Noted that in SI units, the magnetic induction $\mathbf{B}$ is related to $\mathbf{H}$ by the relationship
+\begin{equation}
+\mathbf{B} = \mu_0 (\mathbf{H} + \mathbf{M}) = \mu_0(1+\chi)\mathbf{H} = \mu \mathbf{H}
+\end{equation}
+where $\mu_0$ is the vacuum permeability, and $(1+\chi)$ is the relative permeability of the material. Thus the volume magnetic susceptibility $\chi$ and the magnetic permeability $\mu$ are related by the following formula
+\begin{equation}
+\mu =\mu_{0}\left(1+\chi\right).
+\end{equation}
+
+However in Gaussian units (or cgs emu, which is the same for magnetic properties), the magnetic induction $\mathbf{B}$ is related to $\mathbf{H}$ by the relationship
+\begin{equation}
+\mathbf{B} = \mathbf{H} + 4\pi \mathbf{M} = (1+4\pi\chi)\mathbf{H}.
+\end{equation}
+
+For a conversion between SI units and Gaussian units, please refer to \href{https://www.qdusa.com/sitedocs/UnitsChart.pdf}{this table}.
+
+\subsubsection{Susceptibility Tensor}
+The magnetic susceptibility of most crystals is not a scalar quantity. Magnetic response $\mathbf{M}$ is dependent upon the orientation of the sample and can occur in directions other than that of the applied field $\mathbf{H}$. In these cases, volume susceptibility is defined as a tensor
+\begin{equation}
+{M}_{i} = {H}_{j} \chi_{ij}
+\end{equation}
+where $i$ and $j$ refer to the directions (e.g., $x$ and $y$ in Cartesian coordinates) of the applied field and magnetization, respectively.
+
+\subsubsection{Differential Susceptibility}
+In ferromagnetic crystals, the relationship between $\mathbf{M}$ and $\mathbf{H}$ is not linear. To accommodate this, a more general definition of differential susceptibility is used
+\begin{equation}
+\chi_{ij}=\frac{\partial M_{i}}{\partial H_{j}}
+\end{equation}
+where $\chi_{ij}$ is a tensor derived from partial derivatives of components of $\mathbf{M}$ with respect to components of $\mathbf{H}$. 
+
+\subsection{Ne\'{e}l Temperature}
+
+\subsection{Curie Temperature}
+
+\section{Ferromagnetism}
+
+\section{Antiferromagnetism}
+
+\section{Ising Model}
+
+More text.
+
+\chapter{Miscellany}
+\begin{center}
+Science is rooted in conversations.
+\end{center}
+
+\begin{flushright}
+------ Werner Heisenberg (1901 - 1976)
+\end{flushright}
+
+\end{document}
